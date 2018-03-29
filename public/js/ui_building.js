@@ -31,7 +31,7 @@ function build_marble(marble) {
 	if (auditingMarble && marble.id === auditingMarble.id) auditing = 'auditingMarble';
 
 	html += '<span id="' + marble.id + '" class="ball ' + size + ' ' + colorClass + ' ' + auditing + ' title="' + marble.id + '"';
-	html += ' username="' + marble.owner.username + '" company="' + marble.owner.company + '" owner_id="' + marble.owner.id + '"></span>';
+	html += ' Benutzer="' + marble.owner.username + '" Firma="' + marble.owner.company + '" Eigentuemer ID="' + marble.owner.id + '"></span>';
 
 	$('.marblesWrap[owner_id="' + marble.owner.id + '"]').find('.innerMarbleWrap').prepend(html);
 	$('.marblesWrap[owner_id="' + marble.owner.id + '"]').find('.noMarblesMsg').hide();
@@ -89,7 +89,7 @@ function build_user_panels(data) {
 			disableHtml = '<span class="fa fa-trash disableOwner" title="Disable Owner"></span>';
 		}
 
-		html += `<div id="user` + i + `wrap" username="` + data[i].username + `" company="` + data[i].company +
+		html += `<div id="user` + i + `wrap" Benutzer="` + data[i].username + `" Firma="` + data[i].company +
 			`" owner_id="` + data[i].id + `" class="marblesWrap ` + colorClass + `">
 					<div class="legend" style="` + size_user_name(data[i].username) + `">
 						` + toTitleCase(data[i].username) + `
